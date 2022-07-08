@@ -13,7 +13,7 @@ class Series:
         self.ano = ano
         self.temporadas = temporadas
 
-vingadores = Filmes('vingadores - Guerra infinita' , 2018, 160)
+vingadores = Filme('vingadores - Guerra infinita' , 2018, 160)
 print(vingadores.nome)
 
 westworld = Series('westworld', 2016, 4)
