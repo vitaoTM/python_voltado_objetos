@@ -1,50 +1,37 @@
 from pyparsing import anyOpenTag
 
 
-class Filme:
-    def __init__(self, nome, ano, duracao):
+
+
+class Programa:
+    def __init__(self, nome, ano):
         self.__nome = nome.title()
         self.__likes = 0
         self.ano = ano
+        
+    @property
+    def likes(self):
+        return self.__likes
+    def dar_like(self):
+        self.__likes += 1
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @nome.setter
+    def nome(self, novo_nome):
+        self.__nome = novo_nome.title()
+
+class Filme(Programa):
+    def __init__(self, nome, ano, duracao):
+        super().__init__(nome, ano)
         self.duracao = duracao
 
-    @property
-    def likes(self):
-        return self.__likes
-    def dar_like(self):
-        self.__likes += 1
-
-    @property
-    def nome(self):
-        return self.__nome
-
-    @nome.setter
-    def nome(self, novo_nome):
-        self.__nome = novo_nome.title()
-
-class Series:
+class Series(Programa):
     def __init__(self, nome, ano, temporadas):
-        self.__nome = nome.title() 
-        self.__likes = 0       
-        self.ano = ano
+        super().__init__(nome, ano)
         self.temporadas = temporadas
-
-    def dar_like(self):
-        self.likes += 1
-
-    @property
-    def likes(self):
-        return self.__likes
-    def dar_like(self):
-        self.__likes += 1
-
-    @property
-    def nome(self):
-        return self.__nome
-
-    @nome.setter
-    def nome(self, novo_nome):
-        self.__nome = novo_nome.title()
 
 
 vingadores = Filme('vingadores - Guerra infinita' , 2018, 160)
