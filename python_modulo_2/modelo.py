@@ -6,6 +6,10 @@ class Filme:
         self.nome = nome
         self.ano = ano
         self.duracao = duracao
+        self.likes = 0
+
+    def dar_like(self):
+        self.likes += 1
 
 class Series:
     def __init__(self, nome, ano, temporadas):
