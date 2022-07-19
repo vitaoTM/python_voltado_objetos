@@ -41,15 +41,15 @@ class Series(Programa):
     def __str__(self):
         return f'Nome: {self.nome} - {self.temporadas} temporadas - Likes: {self.likes}'
 
-    class Playlist:
-        def __init__(self, nome, programas):
-            self.nome = nome
-            self.programas = programas
+class Playlist:
+    def __init__(self, nome, programas):
+        self.nome = nome
+        self.programas = programas
 
-        def tamanho(self):
-            return len(self.programas)
+    def tamanho(self):
+        return len(self.programas)
 
-demolidor = Series('demolidor'. 2016, 4)
+demolidor = Series('demolidor', 2016, 4)
 vingadores = Filme('vingadores - Guerra infinita' , 2018, 160)
 westworld = Series('westworld', 2016, 4)
 
