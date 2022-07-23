@@ -41,11 +41,17 @@ class Series(Programa):
     def __str__(self):
         return f'Nome: {self.nome} - {self.temporadas} temporadas - Likes: {self.likes}'
 
-class Playlist(list ):
+class Playlist:
     def __init__(self, nome, programas):
         self.nome = nome
-        super().__init__(programas)
-        self.programas = programas
+        self._programas = programas
+    
+    @property
+    def listagen(self):
+        return self._programas
+    @property
+    def tamanho(self):
+        return len(self._programas)
 
 
 demolidor = Series('demolidor', 2016, 4)
@@ -67,6 +73,8 @@ print(f'Tamanho da playlist: {len(playlist)}')
 
 for programa in playlist:
     print(programa)
+
+print(f'Ta ou nao ta ? {demolidor in playlist}')
 
 # print(f'Nome: {vingadores.nome} - Ano: {vingadores.ano} '
 #       f' - Duração: {vingadores.duracao} - Likes: {vingadores.likes}')
