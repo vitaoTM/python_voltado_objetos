@@ -1,4 +1,5 @@
 from re import I
+import re
 from numpy import atleast_1d
 from pyparsing import anyOpenTag
 
@@ -45,12 +46,15 @@ class Playlist:
     def __init__(self, nome, programas):
         self.nome = nome
         self._programas = programas
+
+    def __getitem__(self, item):
+        return self._programas[item]
     
     @property
     def listagen(self):
         return self._programas
-    @property
-    def tamanho(self):
+    
+    def __len__(self):
         return len(self._programas)
 
 
@@ -70,11 +74,13 @@ playlist = [vingadores, westworld, demolidor]
 fim_de_semana = Playlist('fim de semana', playlist)
 
 print(f'Tamanho da playlist: {len(playlist)}')
+print(vingadores in playlist)
 
 for programa in playlist:
     print(programa)
 
 print(f'Ta ou nao ta ? {demolidor in playlist}')
+
 
 # print(f'Nome: {vingadores.nome} - Ano: {vingadores.ano} '
 #       f' - Duração: {vingadores.duracao} - Likes: {vingadores.likes}')
