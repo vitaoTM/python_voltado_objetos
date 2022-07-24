@@ -3,6 +3,10 @@ import re
 from numpy import atleast_1d
 from pyparsing import anyOpenTag
 from abc import ABC 
+from collections.abc import MutableSequence
+from numbers import Complex
+
+
 
 class Programa:
     def __init__(self, nome, ano):
