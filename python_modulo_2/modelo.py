@@ -2,6 +2,7 @@ from re import I
 import re
 from numpy import atleast_1d
 from pyparsing import anyOpenTag
+from abc import ABC 
 
 class Programa:
     def __init__(self, nome, ano):
