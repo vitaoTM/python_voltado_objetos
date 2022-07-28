@@ -3,7 +3,10 @@ class ExtratorURL:
         self.url = self.sanitiza_url(url)
 
     def sanitiza_url(self, url):
-        return url.strip()
+        if type(url) == str:
+            return url.strip()
+        else:
+            return ""
 
     def valida_url(self):
         if self.url == "":
@@ -27,3 +30,7 @@ class ExtratorURL:
             valor = self.get_url_parametros()[indice_valor:]
         else:
             valor = self.get_url_parametros()[indice_valor:indice_e_comercial]
+        return valor
+
+Extrator_irl = ExtratorURL(None)
+valor_quantidade = extrator_url 
