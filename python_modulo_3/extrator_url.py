@@ -59,6 +59,8 @@ class ExtratorURL:
     def __eq__(self, other):
         return self.url == other.url
 
+    def __round__(self):
+        return round(self)
     
 
 url= "bytebank.com/cambio?quantidade=100&moedaOrigem=dolar&moedaDestino=real"
@@ -71,10 +73,10 @@ quantidade = extrator_url.get_valor_parametro("quantidade")
 
 if moeda_origem == "real" and moeda_destino =="dolar":
     valor_convercao = int(quantidade) / valor_dolar
-    print(f"O valor de R$ {quantidade} reais é igual a $ {valor_convercao} dolares")
+    print(f"O valor de R$ {quantidade} reais é igual a $ {valor_convercao.round(2)} dolares")
 elif moeda_origem == "dolar" and moeda_destino =="real":
     valor_convercao = int(quantidade) * valor_dolar
-    print(f'O valor de $ {quantidade} dolares é igual a {valor_convercao} reais')
+    print(f'O valor de $ {quantidade} dolares é igual a {valor_convercao.round(2)} reais')
 else:
     (f'Cambio de {moeda_origem} para {moeda_destino} não está disponivel')
 
