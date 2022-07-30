@@ -60,3 +60,17 @@ contas = [conta_do_vi, conta_da_je]
 
 for conta in contas:
     print(conta)
+    
+texto = """
+
+"""
+
+def analisa_frequencia_de_letras(texto):
+  aparicoes = Counter(texto.lower())
+  total_de_caracteres = sum(aparicoes.values())
+
+  proporcoes = [(letra, frequencia / total_de_caracteres) for letra, frequencia in aparicoes.items()]
+  proporcoes = Counter(dict(proporcoes))
+  print("{} => {:.2f}%".format(caractere, proporcao * 100))
+
+
