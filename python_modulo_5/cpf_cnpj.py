@@ -1,9 +1,5 @@
-# from validate_doctor import CPF, CNPJ
-
-# class Documento:
-#     @staticmethod
-#     def cria_doc(documento):
-#         if len
+# from validate_docbr import CPF, CNPJ
+from validate_docbr import CPF
 
 class Cpf:
     def __init__(self, documento):
@@ -13,19 +9,16 @@ class Cpf:
         else:
             raise ValueError("CPF invalido")
 
-    def __str__(self):
-        return self.format_Cpf()
-
-    def valida_cpf(self, documento):
-        if len(documento) == 11:
-            return True
+    def valida_cpf(self, cpf):
+        if len(cpf) == 11:
+            validador = CPF()
+            return validador.validate(cpf)
         else:
-            return False
+            return ValueError("Quantidade de Digitos invalida")
 
     def format_Cpf(self):
-        fatia_um = self.cpf[:3]    
-        fatia_dois = self.cpf[3:6] 
-        fatia_tres = self.cpf[6:9] 
-        fatia_quatro = self.cpf[9:]
-        return f"{fatia_um}.{fatia_dois}.{fatia_tres}-{fatia_quatro}"
-        
+        mascara = CPF()
+        return mascara.mask(self.cpf)        
+
+    def __str__(self):
+        return self.format_Cpf()
