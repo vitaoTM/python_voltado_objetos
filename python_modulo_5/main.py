@@ -1,9 +1,11 @@
-from cpf_cnpj import Cpf
+from validate_docbr import CPF
 
-cpf = "04165893919"
+# from cpf_cnpj import Cpf
 
-obj_cpf = Cpf(cpf)
+cpf = CPF()
+
+# obj_cpf = Cpf(cpf)
 
 
 
-print(obj_cpf)
+print(cpf.validate("11111111112"))
