@@ -1,4 +1,4 @@
-# import 
+import requests
 
 class BuscaEndereco:
 
