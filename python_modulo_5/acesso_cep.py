@@ -20,3 +20,14 @@ class BuscaEndereco:
 
     def format_cep(self):
         return f"{self.cep[:5]}-{self.cep[5:]}"
+
+    def acessa_via_cep(self):
+        url = "https://viacep.com.br/ws/{self.cep}/json"
+        r = requests.get(url)
+        dados = r.json()
+        return (
+            dados["bairro"],
+            dados['localidade'],
+            dados['uf']
+        )
+        

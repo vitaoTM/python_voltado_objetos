@@ -5,8 +5,12 @@ from cpf_cnpj import Documento
 from datas import DatasBr
 from acesso_cep import BuscaEndereco
 from numpy import piecewise
+import requests
 
 
+r = requests.get("https://viacep.com.br/ws/01001000/json")
+
+print(r)
 
 cep = 13148004
 obj_cep = BuscaEndereco(cep)
