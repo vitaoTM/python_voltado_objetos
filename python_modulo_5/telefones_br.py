@@ -14,3 +14,6 @@ class TelefonesBr:
             return True
         else:
             return False
+
+    def format_numero(self):
+        pass
