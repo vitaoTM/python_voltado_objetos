@@ -9,18 +9,10 @@ class DatasBr:
 
     def mes_cadastro(self):
         mes_ano = [
-            'Janeiro', 
-            'Fevereiro',
-            'Marco',
-            'Abril',
-            'Maio',
-            'Junho',
-            'Julho',
-            'Agosto',
-            'Setembro',
-            'Outubro',
-            'Novembro',
-            'Dezembro'
+            'Janeiro', 'Fevereiro', 'Marco',
+            'Abril', 'Maio', 'Junho',
+            'Julho', 'Agosto', 'Setembro',
+            'Outubro', 'Novembro', 'Dezembro'
         ]
         mes_cadastro = self.momento_cadastro.month -1
         return mes_ano[mes_cadastro]
@@ -41,3 +33,7 @@ class DatasBr:
     def format_data(self):
         data_formatada = self.momento_cadastro.strftime("%d/%m/%Y %H:%M")
         return data_formatada
+
+    def tempo_cadastro(self):
+        tempo_cadastro = datetime.today() - self.momento_cadastro
+        return tempo_cadastro
