@@ -1,12 +1,15 @@
 # from validate_docbr import CPF
 from telefones_br import TelefonesBr
 from cpf_cnpj import Documento
+from datetime import datetime, timedelta
 from numpy import piecewise
 
 
-telefone = "433343-2255"
 
-tel_obj = TelefonesBr(telefone)
+
+# telefone = "433343-2255"
+
+# tel_obj = TelefonesBr(telefone)
 # padrao = "\w{1,50}.\w{1,50}@\w{2,3}.\w{2,3}"
 
 # texto = "ahdjaof oasjoajsoa soa oajs aohfpa vitor.grosskof@gmail.com"
