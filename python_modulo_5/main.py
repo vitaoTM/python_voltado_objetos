@@ -1,9 +1,12 @@
 # from validate_docbr import CPF
 from telefones_br import TelefonesBr
 from cpf_cnpj import Documento
-from datetime import datetime, timedelta
+from datas import DatasBr
 from numpy import piecewise
 
+cadastro = DatasBr()
+print(cadastro.mes_cadastro())
+print(cadastro.dia_semana())
 
 
 
