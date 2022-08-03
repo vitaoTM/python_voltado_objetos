@@ -1,14 +1,16 @@
 # from validate_docbr import CPF
+from datetime import datetime
 from telefones_br import TelefonesBr
 from cpf_cnpj import Documento
 from datas import DatasBr
 from numpy import piecewise
+# padrao de data Br dd/mm/yyyy
+
 
 cadastro = DatasBr()
 print(cadastro.mes_cadastro())
 print(cadastro.dia_semana())
-
-
+print(cadastro)
 
 # telefone = "433343-2255"
 
