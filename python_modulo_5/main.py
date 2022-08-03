@@ -3,14 +3,20 @@ from datetime import datetime
 from telefones_br import TelefonesBr
 from cpf_cnpj import Documento
 from datas import DatasBr
+from acesso_cep import BuscaEndereco
 from numpy import piecewise
+
+
+
+cep = 13148004
+obj_cep = BuscaEndereco(cep)
+print(obj_cep)
+
 # padrao de data Br dd/mm/yyyy
-
-
-cadastro = DatasBr()
-print(cadastro.mes_cadastro())
-print(cadastro.dia_semana())
-print(cadastro)
+# cadastro = DatasBr()
+# print(cadastro.mes_cadastro())
+# print(cadastro.dia_semana())
+# print(cadastro)
 
 # telefone = "433343-2255"
 
